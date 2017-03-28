@@ -1,6 +1,7 @@
 package com.example.user.android_hw3;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -66,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+        else{
+            Uri url = Uri.parse("http://google.com.tw");
+            Intent web = new Intent();
+            web.setAction(Intent.ACTION_VIEW);
+            web.setData(url);
+            startActivity(web);
+
         }
 
         return super.onOptionsItemSelected(item);
